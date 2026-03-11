@@ -3,840 +3,314 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Munoz & Sons Construction | Licensed Contractor Since 2014</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Muñoz &amp; Sons Construction | Licensed Contractor | 505-908-7838</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --gold: #C8922A;
-    --gold-light: #E8B84B;
-    --dark: #111111;
+    --red:    #C0392B;
+    --red2:   #E74C3C;
+    --gold:   #D4A017;
+    --gold2:  #F0C040;
+    --dark:   #111111;
     --darker: #0A0A0A;
-    --mid: #1E1E1E;
-    --gray: #888;
-    --light: #F5F0E8;
-    --white: #FFFFFF;
+    --mid:    #1C1C1C;
+    --mid2:   #252525;
+    --gray:   #888;
+    --light:  #F0ECE0;
+    --white:  #FFFFFF;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
+  body { background: var(--darker); color: var(--light); font-family: 'Barlow', sans-serif; overflow-x: hidden; }
 
-  body {
-    background: var(--darker);
-    color: var(--light);
-    font-family: 'Barlow', sans-serif;
-    overflow-x: hidden;
-  }
-
-  /* ── NAV ── */
+  /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 4vw;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(200,146,42,0.2);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 4vw;
+    background: rgba(8,8,8,0.95); backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--red);
   }
-
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--white); }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--light);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.55rem; letter-spacing: 2px; color: var(--white); text-decoration: none; }
+  .nav-logo .red { color: var(--red); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a { font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(240,236,224,0.75); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
+  .nav-phone { background: var(--red); color: var(--white) !important; padding: 0.45rem 1.2rem; font-weight: 700 !important; transition: background 0.2s !important; }
+  .nav-phone:hover { background: var(--red2) !important; }
 
-  .nav-cta {
-    background: var(--gold);
-    color: var(--dark) !important;
-    padding: 0.5rem 1.4rem;
-    font-weight: 700 !important;
-    transition: background 0.2s !important;
-  }
+  /* HERO */
+  #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding-top: 80px; }
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, rgba(5,5,5,0.96) 40%, rgba(30,8,8,0.9) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover no-repeat; }
+  .hero-stripe { position: absolute; left: 0; right: 0; height: 3px; background: var(--red); opacity: 0.7; }
+  .hero-stripe.top { top: 80px; } .hero-stripe.bot { bottom: 0; }
+  .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; width: 100%; padding: 4rem 4vw; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; animation: fadeIn 0.8s ease both; }
+  .hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 24px; height: 1px; background: var(--gold); opacity: 0.6; }
+  .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 8vw, 7.5rem); line-height: 0.92; letter-spacing: 1px; color: var(--white); animation: fadeIn 0.9s 0.1s ease both; }
+  .hero-title .red { color: var(--red); } .hero-title .gold { color: var(--gold); }
+  .hero-tagline { font-size: 1.1rem; font-weight: 300; color: rgba(240,236,224,0.6); margin-top: 1.5rem; line-height: 1.7; max-width: 420px; animation: fadeIn 1s 0.2s ease both; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; animation: fadeIn 1s 0.3s ease both; }
+  .badge { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; padding: 0.35rem 0.9rem; border: 1px solid rgba(192,57,43,0.5); color: rgba(240,236,224,0.65); }
+  .badge.gold-badge { border-color: rgba(212,160,23,0.5); color: var(--gold); }
+  .hero-buttons { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; animation: fadeIn 1s 0.4s ease both; }
+  .btn-red { background: var(--red); color: var(--white); padding: 0.9rem 2.2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.15s; }
+  .btn-red:hover { background: var(--red2); transform: translateY(-2px); }
+  .btn-ghost { border: 1px solid rgba(240,236,224,0.3); color: var(--light); padding: 0.9rem 2.2rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: border-color 0.2s, color 0.2s, transform 0.15s; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-right { display: flex; align-items: center; justify-content: center; animation: fadeIn 1.1s 0.3s ease both; }
+  .zia-wrap { width: clamp(260px, 30vw, 420px); aspect-ratio: 1; }
+  .zia-wrap svg { width: 100%; height: 100%; }
 
-  .nav-cta:hover { background: var(--gold-light) !important; color: var(--dark) !important; }
-
-  /* ── HERO ── */
-  #hero {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 80px;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(135deg, rgba(10,10,10,0.97) 0%, rgba(20,14,4,0.88) 100%),
-      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover no-repeat;
-    z-index: 0;
-  }
-
-  .hero-texture {
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8922A' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    z-index: 0;
-  }
-
-  .hero-accent {
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 40%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 2rem 4vw;
-    max-width: 900px;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.78rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(200,146,42,0.4);
-    padding: 0.4rem 1.2rem;
-    margin-bottom: 1.8rem;
-    animation: fadeDown 0.8s ease both;
-  }
-
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(4rem, 12vw, 10rem);
-    line-height: 0.9;
-    letter-spacing: 2px;
-    color: var(--white);
-    animation: fadeDown 0.9s 0.1s ease both;
-  }
-
-  .hero-title .gold { color: var(--gold); }
-
-  .hero-sub {
-    font-size: 1.15rem;
-    font-weight: 300;
-    color: rgba(245,240,232,0.7);
-    margin-top: 1.5rem;
-    line-height: 1.7;
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeDown 1s 0.2s ease both;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 2.5rem;
-    flex-wrap: wrap;
-    animation: fadeDown 1s 0.3s ease both;
-  }
-
-  .btn-primary {
-    background: var(--gold);
-    color: var(--dark);
-    padding: 0.9rem 2.4rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.2s;
-    display: inline-block;
-  }
-
-  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-
-  .btn-outline {
-    border: 1px solid rgba(245,240,232,0.4);
-    color: var(--light);
-    padding: 0.9rem 2.4rem;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: border-color 0.2s, color 0.2s, transform 0.2s;
-    display: inline-block;
-  }
-
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-
-  .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 4rem;
-    animation: fadeDown 1s 0.4s ease both;
-    flex-wrap: wrap;
-  }
-
+  /* STATS BAR */
+  .stats-bar { background: var(--red); padding: 1.8rem 4vw; display: flex; justify-content: center; gap: clamp(2rem, 6vw, 6rem); flex-wrap: wrap; }
   .stat { text-align: center; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--white); line-height: 1; }
+  .stat-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-top: 0.2rem; }
 
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3rem;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gray);
-    margin-top: 0.3rem;
-  }
-
-  /* ── DIVIDER ── */
-  .divider {
-    height: 4px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity: 0.4;
-  }
-
-  /* ── SECTION BASE ── */
+  /* SECTIONS */
   section { padding: 6rem 4vw; }
+  .section-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 5px; text-transform: uppercase; color: var(--red); margin-bottom: 0.7rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1; color: var(--white); margin-bottom: 1.2rem; }
+  .section-body { font-size: 1rem; font-weight: 300; color: rgba(240,236,224,0.6); line-height: 1.8; max-width: 540px; }
+  .divider { height: 3px; background: linear-gradient(90deg, transparent, var(--red), transparent); opacity: 0.3; }
 
-  .section-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.8rem;
-  }
+  /* ABOUT */
+  #about { background: var(--mid); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-img-wrap { position: relative; }
+  .about-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; filter: brightness(0.9) contrast(1.05); }
+  .about-corner { position: absolute; bottom: -14px; right: -14px; width: 100px; height: 100px; background: var(--red); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0.5rem; }
+  .about-corner-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.6rem; color: var(--white); line-height: 1; }
+  .about-corner-lbl { font-size: 0.6rem; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.85); line-height: 1.3; }
+  .about-frame { position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px; border: 2px solid rgba(192,57,43,0.3); pointer-events: none; z-index: -1; }
+  .alejandro-card { margin-top: 2rem; padding: 1.2rem 1.5rem; border-left: 3px solid var(--gold); background: rgba(212,160,23,0.06); }
+  .alejandro-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; letter-spacing: 1px; color: var(--white); }
+  .alejandro-title { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-top: 0.15rem; }
+  .about-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.65rem; }
+  .about-list li { display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: rgba(240,236,224,0.7); }
+  .about-list li::before { content: ''; width: 6px; height: 6px; background: var(--red); flex-shrink: 0; transform: rotate(45deg); }
 
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 1;
-    color: var(--white);
-    margin-bottom: 1.5rem;
-  }
-
-  .section-body {
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: rgba(245,240,232,0.65);
-    line-height: 1.8;
-    max-width: 560px;
-  }
-
-  /* ── ABOUT ── */
-  #about {
-    background: var(--mid);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .about-img-wrap {
-    position: relative;
-  }
-
-  .about-img {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    display: block;
-  }
-
-  .about-img-frame {
-    position: absolute;
-    top: -16px; left: -16px;
-    right: 16px; bottom: 16px;
-    border: 2px solid rgba(200,146,42,0.35);
-    pointer-events: none;
-    z-index: -1;
-  }
-
-  .about-badge {
-    position: absolute;
-    bottom: -1.5rem;
-    right: -1.5rem;
-    background: var(--gold);
-    color: var(--dark);
-    padding: 1.4rem;
-    text-align: center;
-    width: 130px;
-    height: 130px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .about-badge-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    line-height: 1;
-  }
-
-  .about-badge-text {
-    font-size: 0.65rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-top: 0.2rem;
-  }
-
-  .about-list {
-    list-style: none;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-
-  .about-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-size: 0.95rem;
-    color: rgba(245,240,232,0.75);
-  }
-
-  .about-list li::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    flex-shrink: 0;
-    transform: rotate(45deg);
-  }
-
-  /* ── SERVICES ── */
-  #services {
-    background: var(--darker);
-  }
-
-  .services-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5px;
-    background: rgba(200,146,42,0.15);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .service-card {
-    background: var(--darker);
-    padding: 2.5rem;
-    transition: background 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 3px;
-    background: var(--gold);
-    transition: width 0.4s;
-  }
-
+  /* SERVICES */
+  #services { background: var(--darker); }
+  .services-header { text-align: center; margin-bottom: 3.5rem; }
+  .services-header .section-body { margin: 0 auto; text-align: center; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(192,57,43,0.2); max-width: 1100px; margin: 0 auto; }
+  .service-card { padding: 2.5rem 2rem; border-right: 1px solid rgba(192,57,43,0.15); border-bottom: 1px solid rgba(192,57,43,0.15); position: relative; overflow: hidden; transition: background 0.3s; }
   .service-card:hover { background: var(--mid); }
-  .service-card:hover::after { width: 100%; }
+  .service-card::after { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--red); transition: height 0.4s; }
+  .service-card:hover::after { height: 100%; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.55rem; letter-spacing: 1px; color: var(--white); margin-bottom: 0.6rem; }
+  .service-desc { font-size: 0.88rem; color: rgba(240,236,224,0.5); line-height: 1.7; }
 
-  .service-icon {
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
-    display: block;
-  }
+  /* PROMISE */
+  #promise { background: linear-gradient(90deg, #8B0000, var(--red), #8B0000); padding: 3.5rem 4vw; text-align: center; }
+  .promise-text { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem, 3.5vw, 3rem); color: var(--white); letter-spacing: 2px; line-height: 1.3; }
+  .promise-text .underline { border-bottom: 3px solid rgba(255,255,255,0.45); padding-bottom: 2px; }
+  .promise-sig { margin-top: 0.8rem; font-family: 'Barlow Condensed', sans-serif; font-style: italic; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.55); }
 
-  .service-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-    color: var(--white);
-    margin-bottom: 0.8rem;
-  }
+  /* PROCESS */
+  #process { background: var(--mid); }
+  .process-inner { max-width: 860px; margin: 0 auto; }
+  .process-steps { display: flex; flex-direction: column; margin-top: 3rem; position: relative; }
+  .process-steps::before { content: ''; position: absolute; left: 23px; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--red), transparent); }
+  .step { display: flex; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid rgba(192,57,43,0.1); }
+  .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--white); background: var(--red); width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 1; }
+  .step-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 0.4rem; }
+  .step-body { font-size: 0.9rem; color: rgba(240,236,224,0.5); line-height: 1.7; }
 
-  .service-desc {
-    font-size: 0.9rem;
-    color: rgba(245,240,232,0.55);
-    line-height: 1.7;
-  }
+  /* REVIEWS */
+  #reviews { background: var(--darker); }
+  .reviews-header { text-align: center; margin-bottom: 3.5rem; }
+  .stars { color: var(--gold); font-size: 1rem; letter-spacing: 3px; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+  .review-card { background: var(--mid); padding: 2rem; border-top: 3px solid var(--red); }
+  .review-open-quote { font-size: 3.5rem; font-family: Georgia, serif; color: rgba(192,57,43,0.2); line-height: 1; margin-bottom: -0.5rem; }
+  .review-text { font-size: 0.93rem; color: rgba(240,236,224,0.65); line-height: 1.8; margin: 1rem 0 1.5rem; font-style: italic; }
+  .reviewer-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); }
+  .reviewer-info { font-size: 0.78rem; color: var(--gray); margin-top: 0.2rem; }
+  .overall-block { text-align: center; margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid rgba(192,57,43,0.15); }
+  .big-num { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; color: var(--gold); line-height: 1; }
+  .big-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-top: 0.3rem; }
 
-  /* ── PROMISE BAND ── */
-  #promise {
-    background: var(--gold);
-    padding: 3.5rem 4vw;
-    text-align: center;
-  }
+  /* WHY */
+  #why { background: var(--mid); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .why-items { display: flex; flex-direction: column; gap: 1.6rem; margin-top: 2rem; }
+  .why-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .why-icon { width: 44px; height: 44px; background: rgba(192,57,43,0.1); border: 1px solid rgba(192,57,43,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .why-label { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--white); margin-bottom: 0.25rem; }
+  .why-desc { font-size: 0.87rem; color: rgba(240,236,224,0.5); line-height: 1.6; }
+  .why-img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
 
-  .promise-text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 3.2rem);
-    color: var(--dark);
-    letter-spacing: 2px;
-    line-height: 1.2;
-  }
+  /* AREA */
+  #area { background: var(--darker); text-align: center; }
+  .area-inner { max-width: 680px; margin: 0 auto; }
+  .area-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-top: 2.5rem; }
+  .area-tag { background: var(--mid); border: 1px solid rgba(192,57,43,0.2); font-family: 'Barlow Condensed', sans-serif; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(240,236,224,0.6); padding: 0.45rem 1.1rem; transition: border-color 0.2s, color 0.2s; }
+  .area-tag:hover { border-color: var(--red); color: var(--light); }
 
-  .promise-text em {
-    font-style: normal;
-    border-bottom: 3px solid rgba(0,0,0,0.3);
-  }
-
-  /* ── PROCESS ── */
-  #process {
-    background: var(--mid);
-  }
-
-  .process-inner {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .process-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 3rem;
-    position: relative;
-  }
-
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    left: 24px;
-    top: 0; bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-  }
-
-  .step {
-    display: flex;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid rgba(200,146,42,0.12);
-  }
-
-  .step-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    color: var(--gold);
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    background: var(--mid);
-    position: relative;
-    z-index: 1;
-  }
-
-  .step-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 0.4rem;
-  }
-
-  .step-body {
-    font-size: 0.9rem;
-    color: rgba(245,240,232,0.55);
-    line-height: 1.7;
-  }
-
-  /* ── REVIEWS ── */
-  #reviews {
-    background: var(--darker);
-  }
-
-  .reviews-header { text-align: center; margin-bottom: 4rem; }
-
-  .stars {
-    color: var(--gold);
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-  }
-
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .review-card {
-    background: var(--mid);
-    padding: 2rem;
-    border-left: 3px solid var(--gold);
-    position: relative;
-  }
-
-  .review-quote {
-    font-size: 3rem;
-    color: rgba(200,146,42,0.2);
-    font-family: Georgia, serif;
-    line-height: 1;
-    position: absolute;
-    top: 0.5rem;
-    right: 1.5rem;
-  }
-
-  .review-text {
-    font-size: 0.95rem;
-    color: rgba(245,240,232,0.7);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-  }
-
-  .reviewer-name {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--white);
-  }
-
-  .reviewer-location {
-    font-size: 0.8rem;
-    color: var(--gray);
-    margin-top: 0.2rem;
-  }
-
-  .review-rating { margin-bottom: 1rem; }
-
-  .overall-rating {
-    text-align: center;
-    margin-top: 3rem;
-  }
-
-  .big-rating {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 5rem;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  .rating-sub {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-
-  /* ── WHY US ── */
-  #why {
-    background: var(--mid);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .why-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-    margin-top: 2rem;
-  }
-
-  .why-item {
-    display: flex;
-    gap: 1.2rem;
-    align-items: flex-start;
-  }
-
-  .why-icon {
-    width: 44px;
-    height: 44px;
-    background: rgba(200,146,42,0.12);
-    border: 1px solid rgba(200,146,42,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  .why-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 0.3rem;
-  }
-
-  .why-desc {
-    font-size: 0.88rem;
-    color: rgba(245,240,232,0.55);
-    line-height: 1.6;
-  }
-
-  .why-img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-  }
-
-  /* ── SERVICE AREA ── */
-  #area {
-    background: var(--darker);
-    text-align: center;
-  }
-
-  .area-inner { max-width: 700px; margin: 0 auto; }
-
-  .area-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.7rem;
-    margin-top: 2.5rem;
-  }
-
-  .area-tag {
-    background: var(--mid);
-    border: 1px solid rgba(200,146,42,0.2);
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(245,240,232,0.65);
-    padding: 0.5rem 1.2rem;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .area-tag:hover { border-color: var(--gold); color: var(--gold); }
-
-  /* ── CTA ── */
-  #cta {
-    background:
-      linear-gradient(135deg, rgba(10,10,10,0.96) 0%, rgba(20,14,4,0.92) 100%),
-      url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1400&q=80') center/cover no-repeat;
-    text-align: center;
-  }
-
-  .cta-inner { max-width: 680px; margin: 0 auto; }
-
+  /* CTA */
+  #cta { background: linear-gradient(155deg, rgba(5,5,5,0.97) 30%, rgba(30,4,4,0.93) 100%), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1400&q=80') center/cover no-repeat; text-align: center; padding: 7rem 4vw; }
   #cta .section-title { font-size: clamp(3rem, 7vw, 6rem); }
-
-  .cta-contact {
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-  }
-
+  .cta-inner { max-width: 680px; margin: 0 auto; }
+  .cta-contact { display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap; }
   .contact-item { text-align: center; }
+  .contact-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .contact-label { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 0.3rem; }
+  .contact-value { font-size: 1.05rem; font-weight: 600; color: var(--white); }
 
-  .contact-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+  /* FOOTER */
+  footer { background: #060606; padding: 2rem 4vw; display: flex; align-items: center; justify-content: space-between; border-top: 2px solid var(--red); flex-wrap: wrap; gap: 1rem; }
+  .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: var(--white); letter-spacing: 2px; }
+  .footer-logo .red { color: var(--red); }
+  .footer-note { font-size: 0.78rem; color: rgba(240,236,224,0.25); }
+  .footer-lic { font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); opacity: 0.8; }
 
-  .contact-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.3rem;
-  }
+  /* ANIMATIONS */
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
 
-  .contact-value {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--white);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #050505;
-    padding: 2.5rem 4vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(200,146,42,0.15);
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    color: var(--gold);
-    letter-spacing: 2px;
-  }
-
-  .footer-logo span { color: rgba(245,240,232,0.5); }
-
-  .footer-note {
-    font-size: 0.8rem;
-    color: rgba(245,240,232,0.3);
-    letter-spacing: 1px;
-  }
-
-  .footer-lic {
-    font-size: 0.8rem;
-    color: var(--gold);
-    opacity: 0.7;
-    letter-spacing: 1px;
-    font-family: 'Barlow Condensed', sans-serif;
-    text-transform: uppercase;
-  }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── MOBILE ── */
-  @media (max-width: 768px) {
-    #about, #why {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
-    .about-img-wrap { order: -1; }
+  /* MOBILE */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+    .hero-right { display: none; }
+    .hero-tagline { margin: 1.5rem auto 0; }
+    .hero-badges, .hero-buttons { justify-content: center; }
+    #about, #why { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
     .nav-links { display: none; }
-    .hero-stats { gap: 2rem; }
     footer { flex-direction: column; text-align: center; }
   }
+  @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">Munoz <span>&amp; Sons</span></a>
+  <a href="#hero" class="nav-logo">Muñoz <span class="red">&amp;</span> Sons Construction</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#area">Service Area</a></li>
-    <li><a href="#cta" class="nav-cta">Get a Quote</a></li>
+    <li><a href="tel:5059087838" class="nav-phone">📞 505-908-7838</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="hero-texture"></div>
-  <div class="hero-accent"></div>
-  <div class="hero-content">
-    <div class="hero-badge">Licensed Contractor Since 2014</div>
-    <h1 class="hero-title">Munoz<br><span class="gold">&amp; Sons</span><br>Construction</h1>
-    <p class="hero-sub">Built on integrity. Finished with pride. We don't cut corners — we pour them, frame them, and stone them right.</p>
-    <div class="hero-buttons">
-      <a href="#cta" class="btn-primary">Get a Free Quote</a>
-      <a href="#services" class="btn-outline">Our Services</a>
+  <div class="hero-stripe top"></div>
+  <div class="hero-stripe bot"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Licensed Contractor Since 2014</div>
+      <h1 class="hero-title">Muñoz<br><span class="red">&amp;</span> Sons<br><span class="gold">Construction</span></h1>
+      <p class="hero-tagline">Family-owned craftsmanship built on New Mexico soil. Concrete, masonry, stucco, and stone — done right, every time.</p>
+      <div class="hero-badges">
+        <span class="badge gold-badge">✔ Licensed</span>
+        <span class="badge gold-badge">✔ Insured</span>
+        <span class="badge gold-badge">✔ Bonded</span>
+        <span class="badge">Since 2014</span>
+        <span class="badge">Family Owned</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="tel:5059087838" class="btn-red">📞 505-908-7838</a>
+        <a href="#services" class="btn-ghost">Our Services</a>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">10+</div>
-        <div class="stat-label">Years Licensed</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Projects Completed</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Effort. Always.</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">5★</div>
-        <div class="stat-label">Customer Rated</div>
+    <!-- Zia Sun SVG Logo -->
+    <div class="hero-right">
+      <div class="zia-wrap">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(192,57,43,0.15)" stroke-width="2"/>
+          <circle cx="200" cy="200" r="155" fill="none" stroke="rgba(192,57,43,0.25)" stroke-width="1"/>
+          <!-- Center circle -->
+          <circle cx="200" cy="200" r="42" fill="#C0392B"/>
+          <circle cx="200" cy="200" r="30" fill="#8B0000"/>
+          <!-- Top 4 rays -->
+          <rect x="194" y="80" width="12" height="48" rx="2" fill="#C0392B"/>
+          <rect x="186" y="100" width="28" height="10" rx="2" fill="#C0392B"/>
+          <rect x="182" y="115" width="36" height="8" rx="2" fill="#C0392B"/>
+          <rect x="178" y="127" width="44" height="7" rx="2" fill="#C0392B"/>
+          <!-- Bottom 4 rays -->
+          <rect x="194" y="272" width="12" height="48" rx="2" fill="#C0392B"/>
+          <rect x="186" y="290" width="28" height="10" rx="2" fill="#C0392B"/>
+          <rect x="182" y="277" width="36" height="8" rx="2" fill="#C0392B"/>
+          <rect x="178" y="266" width="44" height="7" rx="2" fill="#C0392B"/>
+          <!-- Left 4 rays -->
+          <rect x="80" y="194" width="48" height="12" rx="2" fill="#C0392B"/>
+          <rect x="100" y="186" width="10" height="28" rx="2" fill="#C0392B"/>
+          <rect x="115" y="182" width="8" height="36" rx="2" fill="#C0392B"/>
+          <rect x="127" y="178" width="7" height="44" rx="2" fill="#C0392B"/>
+          <!-- Right 4 rays -->
+          <rect x="272" y="194" width="48" height="12" rx="2" fill="#C0392B"/>
+          <rect x="290" y="186" width="10" height="28" rx="2" fill="#C0392B"/>
+          <rect x="277" y="182" width="8" height="36" rx="2" fill="#C0392B"/>
+          <rect x="266" y="178" width="7" height="44" rx="2" fill="#C0392B"/>
+          <!-- Roadrunner -->
+          <g transform="translate(165,168) scale(0.88)">
+            <ellipse cx="48" cy="38" rx="28" ry="18" fill="#D4A017"/>
+            <path d="M75 30 L95 22 M75 34 L98 30 M75 38 L96 40 M75 42 L90 50" stroke="#D4A017" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <ellipse cx="24" cy="22" rx="16" ry="13" fill="#D4A017"/>
+            <path d="M18 10 L14 0 M22 9 L20 -2 M27 10 L26 0" stroke="#D4A017" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M8 20 L-6 18 L8 24 Z" fill="#C0392B"/>
+            <circle cx="18" cy="19" r="3.5" fill="#111"/>
+            <circle cx="17" cy="18" r="1.2" fill="white"/>
+            <path d="M40 54 L38 72 M40 72 L32 80 M40 72 L46 80" stroke="#D4A017" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <path d="M52 56 L50 74 M50 74 L42 82 M50 74 L58 82" stroke="#D4A017" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          </g>
+          <!-- Arc text -->
+          <path id="topArc" d="M 60,200 A 140,140 0 0,1 340,200" fill="none"/>
+          <path id="botArc" d="M 60,200 A 140,140 0 0,0 340,200" fill="none"/>
+          <text font-family="'Bebas Neue', sans-serif" font-size="22" fill="#C0392B" letter-spacing="8">
+            <textPath href="#topArc" startOffset="12%">MUÑOZ &amp; SONS</textPath>
+          </text>
+          <text font-family="'Bebas Neue', sans-serif" font-size="18" fill="#D4A017" letter-spacing="6">
+            <textPath href="#botArc" startOffset="10%">CONSTRUCTION · NM · EST. 2014</textPath>
+          </text>
+        </svg>
       </div>
     </div>
   </div>
 </section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years Licensed</div></div>
+  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Projects Completed</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Effort, Always</div></div>
+  <div class="stat"><div class="stat-num">5★</div><div class="stat-label">Customer Rated</div></div>
+</div>
 
 <div class="divider"></div>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-img-wrap reveal">
-    <img class="about-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Munoz and Sons Construction crew at work">
-    <div class="about-img-frame"></div>
-    <div class="about-badge">
-      <div class="about-badge-num">10+</div>
-      <div class="about-badge-text">Years of Experience</div>
-    </div>
+    <img class="about-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Muñoz and Sons Construction team">
+    <div class="about-frame"></div>
+    <div class="about-corner"><div class="about-corner-num">10+</div><div class="about-corner-lbl">Years Experience</div></div>
   </div>
   <div class="reveal">
     <p class="section-label">Who We Are</p>
     <h2 class="section-title">Family Built.<br>Community Trusted.</h2>
-    <p class="section-body">Munoz & Sons Construction has been a licensed contractor since 2014, delivering solid craftsmanship on every single job. We're a family operation — and that means we take every project personally. We care about quality, not quantity.</p>
-    <ul class="about-list" style="margin-top:2rem;">
-      <li>Licensed & insured contractor since 2014</li>
-      <li>Family-owned and operated</li>
-      <li>We give 100% on every project, every time</li>
-      <li>Honest estimates with no hidden fees</li>
-      <li>We show up, we follow through, we deliver</li>
-      <li>Serving residential and commercial clients</li>
+    <p class="section-body">Muñoz &amp; Sons Construction has been a licensed contractor since 2014, proudly serving New Mexico with honest, hard-working craftsmanship. We care about quality, not quantity — and we treat every project like it's our own home.</p>
+    <div class="alejandro-card">
+      <div class="alejandro-name">Alejandro Muñoz</div>
+      <div class="alejandro-title">Founder &amp; Supervisor</div>
+    </div>
+    <ul class="about-list">
+      <li>Licensed, Insured &amp; Bonded — always</li>
+      <li>Family-owned and operated since 2014</li>
+      <li>We give 100% effort on every single job</li>
+      <li>Honest estimates with zero hidden fees</li>
+      <li>We show up, follow through, and deliver</li>
+      <li>Residential &amp; commercial projects welcome</li>
     </ul>
-    <a href="#cta" class="btn-primary" style="margin-top:2.5rem; display:inline-block;">Start Your Project</a>
+    <a href="tel:5059087838" class="btn-red" style="margin-top:2.2rem; display:inline-block;">Get a Free Estimate</a>
   </div>
 </section>
 
@@ -847,48 +321,46 @@
   <div class="services-header reveal">
     <p class="section-label">What We Do</p>
     <h2 class="section-title">Our Specialties</h2>
-    <p class="section-body" style="margin: 0 auto; text-align:center;">From solid foundations to beautiful stonework, we handle it all with precision and care.</p>
+    <p class="section-body">From solid foundations to beautiful stonework — we handle every phase with skill, precision, and pride.</p>
   </div>
   <div class="services-grid reveal">
     <div class="service-card">
       <span class="service-icon">🏗️</span>
       <div class="service-name">Concrete Foundations</div>
-      <p class="service-desc">Every great structure starts with a great foundation. We pour and finish residential and commercial foundations built to last decades — properly reinforced and perfectly level.</p>
+      <p class="service-desc">Every great structure begins below ground. We pour reinforced residential and commercial foundations built to code and built to last for decades.</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🚶</span>
-      <div class="service-name">Sidewalks &amp; Walkways</div>
-      <p class="service-desc">Smooth, safe, and beautifully finished concrete sidewalks and pedestrian walkways for homes and commercial properties. Functional and curb-appeal boosting.</p>
+      <div class="service-name">Sidewalks</div>
+      <p class="service-desc">Smooth, safe, and clean concrete sidewalks for homes and businesses. We grade, form, pour, and finish — no shortcuts.</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🚗</span>
       <div class="service-name">Driveways</div>
-      <p class="service-desc">New driveway installations and replacements done right. Whether you need a standard slab or a decorative finish, we pour driveways that hold up through years of daily use.</p>
+      <p class="service-desc">New pours and full replacements. Whether you need a plain slab or a stamped finish, we build driveways that handle daily wear year after year.</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🧱</span>
-      <div class="service-name">Masonry — Block, Brick &amp; Stone</div>
-      <p class="service-desc">Expert masonry work in concrete block, brick, and natural stone. Retaining walls, garden walls, columns, pillars, and structural block — crafted with real skill and attention to detail.</p>
+      <div class="service-name">Masonry Block</div>
+      <p class="service-desc">Structural and decorative block work for retaining walls, perimeter walls, foundations, and more — solid, level, and built to spec.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏛️</span>
+      <div class="service-name">Brick &amp; Stone</div>
+      <p class="service-desc">Expert brick and natural stone masonry for walls, columns, entries, and accents. Timeless craftsmanship that adds lasting value to any property.</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🏠</span>
       <div class="service-name">New Stucco &amp; Re-Stucco</div>
-      <p class="service-desc">Fresh stucco applications and re-stucco jobs for homes and commercial buildings. We prep the surface right, apply even coats, and deliver a clean, weather-resistant finish that lasts.</p>
-    </div>
-    <div class="service-card">
-      <span class="service-icon">📐</span>
-      <div class="service-name">Concrete Flatwork</div>
-      <p class="service-desc">Patios, pool decks, garage slabs, commercial pads — any flatwork that requires precision grading, proper drainage planning, and a flawless finished surface.</p>
+      <p class="service-desc">Fresh stucco applications and re-stucco for homes and commercial buildings. Properly prepped, evenly applied, and weather-ready.</p>
     </div>
   </div>
 </section>
 
 <!-- PROMISE BAND -->
 <section id="promise">
-  <p class="promise-text reveal">
-    "We are not perfect — but we will give our <em>100%</em> on every single job."<br>
-    <span style="font-size:0.6em; opacity:0.7; letter-spacing:4px;">— THE MUNOZ FAMILY</span>
-  </p>
+  <p class="promise-text reveal">"We are not perfect — but we will give our <span class="underline">100%</span> on every job."</p>
+  <p class="promise-sig reveal">— Alejandro Muñoz, Founder &amp; Supervisor</p>
 </section>
 
 <!-- PROCESS -->
@@ -896,36 +368,28 @@
   <div class="process-inner">
     <div class="reveal">
       <p class="section-label">How It Works</p>
-      <h2 class="section-title">Simple.<br>Straightforward.</h2>
+      <h2 class="section-title">Simple &amp;<br>Straightforward</h2>
     </div>
     <div class="process-steps">
       <div class="step reveal">
         <div class="step-num">01</div>
-        <div>
-          <div class="step-title">Free Consultation &amp; Estimate</div>
-          <p class="step-body">Reach out and tell us about your project. We'll come out, take a look, and give you a clear, honest quote with no surprise charges — at no cost to you.</p>
-        </div>
+        <div><div class="step-title">Free Consultation &amp; Estimate</div>
+        <p class="step-body">Call us at 505-908-7838. We'll come out, walk the site, and give you a clear, honest quote — no charge, no pressure.</p></div>
       </div>
       <div class="step reveal">
         <div class="step-num">02</div>
-        <div>
-          <div class="step-title">Project Planning</div>
-          <p class="step-body">We go over every detail with you — materials, timeline, and expectations. You'll know exactly what to expect before we ever break ground.</p>
-        </div>
+        <div><div class="step-title">Project Planning</div>
+        <p class="step-body">We go over every detail — materials, timeline, expectations. You'll know exactly what to expect before we ever break ground.</p></div>
       </div>
       <div class="step reveal">
         <div class="step-num">03</div>
-        <div>
-          <div class="step-title">We Get to Work</div>
-          <p class="step-body">Our crew shows up on time and works hard every day on your project. We keep the site clean, communicate with you throughout, and never cut corners.</p>
-        </div>
+        <div><div class="step-title">We Get to Work</div>
+        <p class="step-body">Our crew arrives on time and works hard every day. We keep the site clean, communicate throughout, and never cut corners.</p></div>
       </div>
       <div class="step reveal">
         <div class="step-num">04</div>
-        <div>
-          <div class="step-title">Final Walkthrough &amp; Your Approval</div>
-          <p class="step-body">When the job is done, we walk the project with you. You're satisfied before we consider it complete. That's the Munoz guarantee.</p>
-        </div>
+        <div><div class="step-title">Final Walkthrough &amp; Your Approval</div>
+        <p class="step-body">When the job is done, we walk it with you. You're satisfied before we consider it complete — that's the Muñoz guarantee.</p></div>
       </div>
     </div>
   </div>
@@ -940,61 +404,47 @@
     <h2 class="section-title">Real Results.<br>Real People.</h2>
   </div>
   <div class="reviews-grid">
-
     <div class="review-card reveal">
-      <div class="review-quote">"</div>
-      <div class="review-rating"><div class="stars">★★★★★</div></div>
-      <p class="review-text">Munoz and Sons poured our entire driveway and extended the sidewalk along the front of our property. Couldn't be happier — clean work, fair price, and they finished ahead of schedule. Highly recommend.</p>
-      <div class="reviewer-name">Carlos R.</div>
-      <div class="reviewer-location">Homeowner · Residential Driveway</div>
+      <div class="review-open-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Muñoz and Sons poured our entire driveway and extended the sidewalk out front. Clean work, fair price, finished ahead of schedule. Highly recommend to anyone in New Mexico.</p>
+      <div class="reviewer-name">Carlos R.</div><div class="reviewer-info">Homeowner · Driveway &amp; Sidewalk</div>
     </div>
-
     <div class="review-card reveal">
-      <div class="review-quote">"</div>
-      <div class="review-rating"><div class="stars">★★★★★</div></div>
-      <p class="review-text">We hired them to re-stucco the exterior of our home. The finish is flawless. They were professional, kept the yard clean, and the price matched the quote exactly. That's rare these days.</p>
-      <div class="reviewer-name">Maria T.</div>
-      <div class="reviewer-location">Homeowner · Re-Stucco Exterior</div>
+      <div class="review-open-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">We had them re-stucco the entire exterior of our home. The finish is flawless, they kept the yard clean, and the final price matched the quote exactly. That's rare these days.</p>
+      <div class="reviewer-name">Maria T.</div><div class="reviewer-info">Homeowner · Re-Stucco Exterior</div>
     </div>
-
     <div class="review-card reveal">
-      <div class="review-quote">"</div>
-      <div class="review-rating"><div class="stars">★★★★★</div></div>
-      <p class="review-text">Had them build a block retaining wall and a stone border around the backyard. The craftsmanship is outstanding. You can tell this crew genuinely cares about the quality of their work.</p>
-      <div class="reviewer-name">James K.</div>
-      <div class="reviewer-location">Property Owner · Masonry &amp; Retaining Wall</div>
+      <div class="review-open-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Built us a block retaining wall and a stone border around the backyard. The craftsmanship is outstanding — you can tell this crew genuinely takes pride in their work.</p>
+      <div class="reviewer-name">James K.</div><div class="reviewer-info">Property Owner · Masonry &amp; Stone</div>
     </div>
-
     <div class="review-card reveal">
-      <div class="review-quote">"</div>
-      <div class="review-rating"><div class="stars">★★★★★</div></div>
-      <p class="review-text">The guys poured a new concrete foundation for my garage addition. Came out perfectly level and was done in less time than I expected. These are the guys you call when you want it done right.</p>
-      <div class="reviewer-name">David M.</div>
-      <div class="reviewer-location">Homeowner · Concrete Foundation</div>
+      <div class="review-open-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Alejandro and his crew poured a new foundation for my garage addition. Came out perfectly level and finished ahead of schedule. These are the guys you call when you want it done right.</p>
+      <div class="reviewer-name">David M.</div><div class="reviewer-info">Homeowner · Concrete Foundation</div>
     </div>
-
     <div class="review-card reveal">
-      <div class="review-quote">"</div>
-      <div class="review-rating"><div class="stars">★★★★★</div></div>
-      <p class="review-text">We've used Munoz & Sons twice now — once for a new patio slab and once for brick work on our front entry. Both times: excellent. Honest people, hard workers, great results.</p>
-      <div class="reviewer-name">Sandra L.</div>
-      <div class="reviewer-location">Repeat Customer · Concrete &amp; Brick</div>
+      <div class="review-open-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Used them twice — a new patio slab and brick work on our front entry. Both times: excellent results. Honest people, hard workers, and a pleasure to deal with.</p>
+      <div class="reviewer-name">Sandra L.</div><div class="reviewer-info">Repeat Customer · Concrete &amp; Brick</div>
     </div>
-
     <div class="review-card reveal">
-      <div class="review-quote">"</div>
-      <div class="review-rating"><div class="stars">★★★★★</div></div>
-      <p class="review-text">I got three quotes for my driveway replacement. Munoz and Sons came in fair, explained everything clearly, and delivered exactly what was promised. The family-run feel makes a real difference.</p>
-      <div class="reviewer-name">Robert A.</div>
-      <div class="reviewer-location">Homeowner · Driveway Replacement</div>
+      <div class="review-open-quote">"</div>
+      <div class="stars">★★★★★</div>
+      <p class="review-text">Got three quotes for my driveway replacement. Muñoz and Sons came in fair, explained everything clearly, and delivered exactly what was promised. The family-run feel makes all the difference.</p>
+      <div class="reviewer-name">Robert A.</div><div class="reviewer-info">Homeowner · Driveway Replacement</div>
     </div>
-
   </div>
-
-  <div class="overall-rating reveal">
-    <div class="big-rating">5.0</div>
-    <div class="stars" style="font-size:1.5rem;">★★★★★</div>
-    <div class="rating-sub" style="margin-top:0.5rem;">Average Rating · 100% Satisfied Customers</div>
+  <div class="overall-block reveal">
+    <div class="big-num">5.0</div>
+    <div class="stars" style="font-size:1.4rem;">★★★★★</div>
+    <div class="big-sub">Average Customer Rating · 100% Satisfied</div>
   </div>
 </section>
 
@@ -1002,41 +452,17 @@
 <section id="why">
   <div class="reveal">
     <p class="section-label">Why Choose Us</p>
-    <h2 class="section-title">The Munoz<br>Difference</h2>
-    <p class="section-body">We're not the biggest company. We're the one that will show up, work hard, and do the job the way it should be done.</p>
+    <h2 class="section-title">The Muñoz<br>Difference</h2>
+    <p class="section-body">We're not the biggest company in New Mexico. We're the one that shows up, works hard, and stands behind every job.</p>
     <div class="why-items">
-      <div class="why-item">
-        <div class="why-icon">🏛️</div>
-        <div>
-          <div class="why-label">Licensed &amp; Insured</div>
-          <p class="why-desc">Fully licensed since 2014. You're protected on every project, no exceptions.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">💰</div>
-        <div>
-          <div class="why-label">Transparent Pricing</div>
-          <p class="why-desc">What we quote is what you pay. No surprise add-ons, no hidden fees — ever.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">👨‍👦</div>
-        <div>
-          <div class="why-label">Family Business</div>
-          <p class="why-desc">This is our name on the work. We take that seriously in a way a big corporation never will.</p>
-        </div>
-      </div>
-      <div class="why-item">
-        <div class="why-icon">⭐</div>
-        <div>
-          <div class="why-label">Quality Over Quantity</div>
-          <p class="why-desc">We don't rush from job to job. Your project gets our full focus and full effort.</p>
-        </div>
-      </div>
+      <div class="why-item"><div class="why-icon">🏛️</div><div><div class="why-label">Licensed, Insured &amp; Bonded</div><p class="why-desc">Fully licensed since 2014 and always insured. You're fully protected on every project.</p></div></div>
+      <div class="why-item"><div class="why-icon">💰</div><div><div class="why-label">Transparent Pricing</div><p class="why-desc">What we quote is what you pay. No surprise add-ons, no hidden fees — ever.</p></div></div>
+      <div class="why-item"><div class="why-icon">👨‍👦</div><div><div class="why-label">Family Business</div><p class="why-desc">This is our name on every wall, every slab, every project. We take that seriously.</p></div></div>
+      <div class="why-item"><div class="why-icon">⭐</div><div><div class="why-label">Quality Over Quantity</div><p class="why-desc">We don't rush from job to job. Your project gets our complete focus and full effort.</p></div></div>
     </div>
   </div>
   <div class="reveal">
-    <img class="why-img" src="https://images.unsplash.com/photo-1590772467-0fd21c951e11?w=800&q=80" alt="Quality concrete and masonry work">
+    <img class="why-img" src="https://images.unsplash.com/photo-1590772467-0fd21c951e11?w=800&q=80" alt="Quality concrete and masonry craftsmanship">
   </div>
 </section>
 
@@ -1046,17 +472,20 @@
 <section id="area">
   <div class="area-inner reveal">
     <p class="section-label">Where We Work</p>
-    <h2 class="section-title">Service Area</h2>
-    <p class="section-body" style="margin: 0 auto 0.5rem; text-align:center;">We proudly serve homeowners and businesses throughout the region. Not sure if we cover your area? Give us a call — we'll make it work.</p>
+    <h2 class="section-title">Serving New Mexico</h2>
+    <p class="section-body" style="margin:0 auto; text-align:center;">We proudly serve homeowners and businesses throughout New Mexico. Not sure if we cover your area? Give us a call — we'll make it work.</p>
     <div class="area-grid">
-      <div class="area-tag">Local Area</div>
-      <div class="area-tag">Surrounding Counties</div>
+      <div class="area-tag">Albuquerque</div>
+      <div class="area-tag">Rio Rancho</div>
+      <div class="area-tag">Bernalillo</div>
+      <div class="area-tag">Corrales</div>
+      <div class="area-tag">Los Lunas</div>
+      <div class="area-tag">Belen</div>
+      <div class="area-tag">Surrounding Areas</div>
       <div class="area-tag">Residential</div>
       <div class="area-tag">Commercial</div>
-      <div class="area-tag">New Construction</div>
-      <div class="area-tag">Renovation</div>
     </div>
-    <p style="margin-top:2rem; font-size:0.85rem; color:var(--gray);">📍 Contact us to confirm coverage in your specific area.</p>
+    <p style="margin-top:2rem; font-size:0.83rem; color:var(--gray);">📍 Call <a href="tel:5059087838" style="color:var(--red); text-decoration:none;">505-908-7838</a> to confirm coverage in your specific area.</p>
   </div>
 </section>
 
@@ -1064,50 +493,32 @@
 <section id="cta">
   <div class="cta-inner reveal">
     <p class="section-label">Ready to Build?</p>
-    <h2 class="section-title">Let's Get<br>Started</h2>
-    <p class="section-body" style="margin: 0 auto; text-align:center; color:rgba(245,240,232,0.65);">Free estimates. No pressure. Just honest conversation about what your project needs and what it will cost.</p>
+    <h2 class="section-title">Let's Get<br>To Work</h2>
+    <p class="section-body" style="margin:0 auto; text-align:center; color:rgba(240,236,224,0.6);">Free estimates. No pressure. Just an honest conversation about what your project needs and what it will cost.</p>
     <div style="margin-top:2.5rem;">
-      <a href="tel:+1XXXXXXXXXX" class="btn-primary" style="font-size:1.1rem; padding:1rem 3rem;">📞 Call Us Today</a>
+      <a href="tel:5059087838" class="btn-red" style="font-size:1.15rem; padding:1rem 3rem; letter-spacing:3px;">📞 505-908-7838</a>
     </div>
     <div class="cta-contact">
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div class="contact-label">Phone</div>
-        <div class="contact-value">Call for a Free Quote</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🕐</div>
-        <div class="contact-label">Hours</div>
-        <div class="contact-value">Mon–Sat, 7AM–6PM</div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">⚡</div>
-        <div class="contact-label">Response Time</div>
-        <div class="contact-value">Within 24 Hours</div>
-      </div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-label">Call or Text</div><div class="contact-value">505-908-7838</div></div>
+      <div class="contact-item"><div class="contact-icon">👷</div><div class="contact-label">Supervisor</div><div class="contact-value">Alejandro Muñoz</div></div>
+      <div class="contact-item"><div class="contact-icon">🕐</div><div class="contact-label">Hours</div><div class="contact-value">Mon–Sat, 7AM–6PM</div></div>
+      <div class="contact-item"><div class="contact-icon">✅</div><div class="contact-label">Credentials</div><div class="contact-value">Licensed · Insured · Bonded</div></div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Munoz <span>&amp; Sons Construction</span></div>
-  <div class="footer-note">© 2024 Munoz & Sons Construction. All rights reserved.</div>
-  <div class="footer-lic">Licensed Contractor Since 2014</div>
+  <div class="footer-logo">Muñoz <span class="red">&amp;</span> Sons Construction</div>
+  <div class="footer-note">© 2024 Muñoz &amp; Sons Construction · New Mexico · All rights reserved.</div>
+  <div class="footer-lic">Licensed · Insured · Bonded · Since 2014</div>
 </footer>
 
 <script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
 </script>
 </body>
 </html>
